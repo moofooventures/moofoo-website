@@ -19,7 +19,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "MooFoo Ventures",
   description:
-    "MooFoo Ventures is a venture studio and investment firm building and backing AI software, SaaS products, e-commerce brands, and the companies of the future.",
+    "MooFoo Ventures builds AI-driven lead generation systems, performance marketing platforms, and digital businesses that connect customers with trusted companies.",
 };
 
 export default function RootLayout({

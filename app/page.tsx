@@ -11,18 +11,15 @@ export default function Home() {
             MooFoo Ventures
           </p>
           <h1 className="mt-8 max-w-3xl text-balance font-serif-display text-4xl leading-tight text-black md:text-6xl">
-            Building and backing the companies of tomorrow.
+            Building AI-Powered Businesses That Generate Customers
           </h1>
           <p className="mt-6 max-w-xl text-balance text-base leading-relaxed text-muted md:text-lg">
-            MooFoo Ventures LLC is a venture studio and investment firm.
-            We build software, back founders, and grow brands across AI,
-            SaaS, and e-commerce.
+            MooFoo Ventures builds AI-driven lead generation systems,
+            performance marketing platforms, and digital businesses that
+            connect customers with trusted companies.
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Button href="/portfolio">View Portfolio</Button>
-            <Button href="/contact" variant="outline">
-              Get in Touch
-            </Button>
+            <Button href="/contact">Get in Touch</Button>
           </div>
         </div>
       </section>
@@ -33,12 +30,12 @@ export default function Home() {
             What We Do
           </p>
           <h2 className="mt-4 font-serif-display text-3xl text-black md:text-4xl">
-            A studio and investment firm under one roof.
+            AI, software, and growth &mdash; under one roof.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted">
-            We operate across five verticals &mdash; building new companies
-            from scratch, and selectively investing in founders building
-            something exceptional.
+            We operate across five verticals &mdash; building AI products,
+            software platforms, and performance marketing systems designed
+            to generate measurable growth.
           </p>
         </div>
 

@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact | MooFoo Ventures",
   description:
-    "Get in touch with MooFoo Ventures LLC to discuss a partnership, investment, or idea.",
+    "Get in touch with MooFoo Ventures LLC to discuss a partnership, project, or idea.",
 };
 
 export default function Contact() {
@@ -21,9 +21,9 @@ export default function Contact() {
         <div className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-[1fr_1.2fr]">
           <div>
             <p className="text-base leading-relaxed text-muted">
-              Whether you&apos;re a founder looking for a partner, an
-              investor, or exploring a collaboration, we&apos;d like to hear
-              from you.
+              Whether you&apos;re looking for a growth partner, exploring a
+              project, or have an idea worth building, we&apos;d like to
+              hear from you.
             </p>
 
             <div className="mt-10 border-t border-line pt-8">

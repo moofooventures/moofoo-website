@@ -18,7 +18,7 @@ export const categories: Category[] = [
     index: "02",
     title: "SaaS Products",
     description:
-      "Subscription software built for durable, recurring value across the businesses we operate and back. Details coming soon.",
+      "Subscription software built for durable, recurring value across the businesses we build and operate. Details coming soon.",
   },
   {
     slug: "ecommerce-brands",
@@ -28,11 +28,11 @@ export const categories: Category[] = [
       "Direct-to-consumer and marketplace brands engineered for growth and brand equity. Details coming soon.",
   },
   {
-    slug: "investments",
+    slug: "lead-generation",
     index: "04",
-    title: "Investments",
+    title: "Lead Generation & Performance Marketing",
     description:
-      "Selective capital and operating support deployed alongside founders we believe in. Details coming soon.",
+      "Data-driven customer acquisition and performance marketing systems engineered to generate measurable, scalable growth. Details coming soon.",
   },
   {
     slug: "future-companies",

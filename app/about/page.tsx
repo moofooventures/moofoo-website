@@ -4,7 +4,7 @@ import Button from "@/components/Button";
 export const metadata: Metadata = {
   title: "About | MooFoo Ventures",
   description:
-    "MooFoo Ventures LLC is a venture studio and investment firm building and backing exceptional software and consumer brands.",
+    "MooFoo Ventures LLC builds AI-driven lead generation systems, performance marketing platforms, and digital businesses that connect customers with trusted companies.",
 };
 
 const values = [
@@ -12,7 +12,7 @@ const values = [
     index: "01",
     title: "Build with conviction",
     description:
-      "We commit fully to the companies we start and the founders we back, rather than spreading thin across everything at once.",
+      "We commit fully to every product and company we build, rather than spreading thin across everything at once.",
   },
   {
     index: "02",
@@ -43,13 +43,13 @@ export default function About() {
             About
           </p>
           <h1 className="mt-8 max-w-3xl text-balance font-serif-display text-4xl leading-tight text-black md:text-5xl">
-            A venture studio and investment firm, built to last.
+            AI, software, and growth systems, built to last.
           </h1>
           <p className="mt-6 max-w-2xl text-balance text-base leading-relaxed text-muted md:text-lg">
-            MooFoo Ventures LLC exists to build and back companies with real
-            staying power &mdash; in AI software, SaaS, e-commerce, and
-            beyond. We combine the discipline of an investment firm with the
-            hands-on execution of an operating studio.
+            MooFoo Ventures LLC exists to build companies with real staying
+            power &mdash; in AI software, performance marketing, and digital
+            growth. We combine deep technical execution with the discipline
+            of a performance-driven operator.
           </p>
         </div>
       </section>
@@ -66,8 +66,8 @@ export default function About() {
             <p className="mt-5 text-base leading-relaxed text-muted">
               We believe the best businesses are built deliberately: sound
               fundamentals, distinctive brand, and a relentless focus on the
-              customer. MooFoo Ventures brings capital, operating experience,
-              and hands-on craft to every company we touch.
+              customer. MooFoo Ventures brings technical expertise, operating
+              experience, and hands-on craft to every company we build.
             </p>
           </div>
           <div>
@@ -75,13 +75,13 @@ export default function About() {
               Our Approach
             </p>
             <h2 className="mt-4 font-serif-display text-3xl text-black">
-              Studio and capital, under one roof.
+              Product and performance, under one roof.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted">
-              Some companies we build from the ground up inside our own
-              studio. Others we back with capital and operating support as
-              outside investors. In both cases, our standard for quality
-              does not change.
+              We build AI products and software platforms in-house, then
+              pair them with performance marketing systems engineered to
+              drive measurable customer growth. Every company we build
+              holds the same standard of craft.
             </p>
           </div>
         </div>

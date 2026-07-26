@@ -5,7 +5,7 @@ import { categories } from "@/lib/categories";
 export const metadata: Metadata = {
   title: "Portfolio | MooFoo Ventures",
   description:
-    "MooFoo Ventures builds and backs companies across AI software, SaaS products, e-commerce brands, investments, and future companies.",
+    "MooFoo Ventures builds AI software, SaaS products, e-commerce brands, and performance marketing systems designed to generate measurable growth.",
 };
 
 export default function Portfolio() {
@@ -20,9 +20,9 @@ export default function Portfolio() {
             Five verticals. One standard of craft.
           </h1>
           <p className="mt-6 max-w-2xl text-balance text-base leading-relaxed text-muted md:text-lg">
-            Our portfolio spans companies we&apos;ve built in-house and
-            founders we back as investors. Company profiles are being added
-            as they are announced.
+            Our portfolio spans the AI software, lead generation systems, and
+            digital businesses we build in-house. Company profiles are being
+            added as they are announced.
           </p>
         </div>
       </section>

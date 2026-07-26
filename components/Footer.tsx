@@ -5,7 +5,6 @@ import logo from "@/public/logo.png";
 const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/portfolio", label: "Portfolio" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -23,8 +22,9 @@ export default function Footer() {
               className="h-auto w-[110px] md:w-[180px]"
             />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
-              A venture studio and investment firm building and backing the
-              next generation of software, commerce, and technology brands.
+              MooFoo Ventures builds AI-driven lead generation systems,
+              performance marketing platforms, and digital businesses that
+              connect customers with trusted companies.
             </p>
           </div>
 
@@ -67,8 +67,8 @@ export default function Footer() {
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-line pt-8 text-xs text-muted/70 md:flex-row md:items-center">
           <p>&copy; {year} MooFoo Ventures LLC. All rights reserved.</p>
           <p className="tracking-[0.15em] uppercase">
-            AI Software &middot; SaaS &middot; E-commerce &middot;
-            Investments
+            AI Software &middot; SaaS &middot; E-commerce &middot; Lead
+            Generation
           </p>
         </div>
       </div>
