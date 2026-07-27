@@ -1,7 +1,7 @@
-import { Home, ShieldCheck, Scale, Landmark, HeartPulse, LayoutGrid } from "lucide-react";
+import { Home, ShieldCheck, Scale, Landmark, HeartPulse, LayoutGrid, Car, Plane } from "lucide-react";
 import type { Industry } from "@/lib/industries";
 
-const icons = { Home, ShieldCheck, Scale, Landmark, HeartPulse, LayoutGrid };
+const icons = { Home, ShieldCheck, Scale, Landmark, HeartPulse, LayoutGrid, Car, Plane };
 
 export default function IndustryCard({ industry }: { industry: Industry }) {
   const Icon = icons[industry.icon];
