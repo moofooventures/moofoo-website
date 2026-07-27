@@ -87,32 +87,32 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 pt-8 pb-20 md:grid-cols-[1fr_1.6fr] md:px-10 md:pt-10 md:pb-28">
           <div>
             <p className="accent-underline w-fit text-xs font-medium tracking-[0.25em] text-blue-soft/80 uppercase">
-              AI-Powered Performance Marketing
+              Intelligent Customer Acquisition
             </p>
             <h1 className="mt-8 text-balance text-3xl leading-[1.1] font-semibold tracking-tight text-white md:text-4xl lg:text-5xl">
-              Building Digital Systems That Generate Qualified Customers.
+              AI-Powered Customer Acquisition. Built for Measurable Growth.
             </h1>
             <p className="mt-7 max-w-lg text-balance text-lg leading-relaxed text-white/70">
-              MooFoo Ventures develops inbound lead-generation platforms,
-              performance marketing campaigns, and AI-assisted digital
-              businesses that connect consumers with trusted service
-              providers.
+              MooFoo Ventures builds intelligent AI systems that qualify,
+              route and optimize customer demand through performance
+              marketing, pay-per-call technology, software platforms and
+              scalable digital products.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Button href="/capabilities" className="!bg-white !text-ink hover:!bg-blue-soft">
-                Explore Our Capabilities
+              <Button href="/contact" className="!bg-white !text-ink hover:!bg-blue-soft">
+                Get In Touch
               </Button>
               <Button
-                href="/contact"
+                href="#how-it-works"
                 variant="outline"
                 className="!border-white/30 !text-white hover:!border-blue hover:!text-blue-soft"
               >
-                Partner With Us
+                How It Works
               </Button>
             </div>
             <p className="mt-8 text-xs font-medium tracking-[0.1em] text-white/50 uppercase">
-              Inbound Lead Generation &bull; Pay Per Call &bull; Performance
-              Marketing &bull; AI Automation
+              AI Customer Acquisition &bull; Pay Per Call &bull; Lead
+              Generation &bull; AI Software
             </p>
           </div>
 
@@ -144,7 +144,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-gray-50 py-28 md:py-36">
+      <section id="how-it-works" className="scroll-mt-24 border-t border-line bg-gray-50 py-28 md:py-36">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <Reveal className="max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
