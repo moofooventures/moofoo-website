@@ -18,27 +18,9 @@ import MarketingMarquee from "@/components/MarketingMarquee";
 import CapabilityCard from "@/components/CapabilityCard";
 import IndustryCard from "@/components/IndustryCard";
 import Reveal from "@/components/Reveal";
+import JourneyFlow from "@/components/JourneyFlow";
 import { capabilities } from "@/lib/capabilities";
 import { industries } from "@/lib/industries";
-
-const steps = [
-  {
-    title: "Capture high-intent demand",
-    description: "Consumers actively searching for help find our digital properties.",
-  },
-  {
-    title: "Route inquiries through approved tracking systems",
-    description: "Every inquiry passes through compliant call tracking and attribution.",
-  },
-  {
-    title: "Connect consumers with participating providers",
-    description: "Qualified inquiries are routed to independent service providers.",
-  },
-  {
-    title: "Measure quality and performance",
-    description: "Call quality and conversion data inform every campaign decision.",
-  },
-];
 
 const techItems = [
   { icon: Search, label: "Search-Intent Analysis" },
@@ -148,27 +130,15 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <Reveal className="max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
-              How It Works
+              How MooFoo Works
             </p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-ink md:text-4xl">
-              A straightforward, compliant model.
+              Demand becomes growth, systematically.
             </h2>
           </Reveal>
 
-          <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-4">
-            {steps.map((step, i) => (
-              <Reveal key={step.title} delay={i * 100} className="relative">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-ink text-sm font-semibold text-white">
-                  {i + 1}
-                </div>
-                <h3 className="mt-5 text-base font-semibold text-ink">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">
-                  {step.description}
-                </p>
-              </Reveal>
-            ))}
+          <div className="mt-16">
+            <JourneyFlow />
           </div>
 
           <Reveal className="mt-14 border-t border-line pt-8 text-sm leading-relaxed text-muted">
