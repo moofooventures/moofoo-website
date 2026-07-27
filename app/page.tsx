@@ -68,19 +68,18 @@ export default function Home() {
   return (
     <>
       <section className="relative overflow-hidden bg-hero-navy">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 pt-8 pb-20 md:grid-cols-[1fr_1.6fr] md:px-10 md:pt-10 md:pb-28">
+        <div className="mx-auto grid max-w-7xl items-center gap-6 px-6 pt-4 pb-8 md:grid-cols-[1.4fr_1.6fr] md:px-10 md:pt-6 md:pb-10">
           <div>
             <p className="accent-underline w-fit text-xs font-medium tracking-[0.25em] text-blue-soft/80 uppercase">
               Intelligent Customer Acquisition
             </p>
             <h1 className="mt-8 text-balance text-3xl leading-[1.1] font-semibold tracking-tight text-white md:text-4xl lg:text-5xl">
-              AI-Powered Customer Acquisition. Built for Measurable Growth.
+              Building Digital Systems That Generate Qualified Customers.
             </h1>
-            <p className="mt-7 max-w-lg text-balance text-lg leading-relaxed text-white/70">
-              MooFoo Ventures builds intelligent AI systems that qualify,
-              route and optimize customer demand through performance
-              marketing, pay-per-call technology, software platforms and
-              scalable digital products.
+            <p className="mt-7 text-balance text-lg leading-relaxed text-white/70">
+              AI-powered systems that identify demand, qualify
+              opportunities, intelligently route customers, and drive
+              measurable business growth.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Button href="/contact" className="!bg-white !text-ink hover:!bg-blue-soft">
@@ -100,7 +99,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex justify-center md:justify-end">
+          <div className="flex justify-center overflow-visible md:justify-start">
             <HeroImage />
           </div>
         </div>
@@ -108,7 +107,7 @@ export default function Home() {
 
       <MarketingMarquee />
 
-      <section className="border-t border-line bg-white py-28 md:py-36">
+      <section className="border-t border-line bg-white py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <Reveal className="max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
@@ -128,7 +127,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="how-it-works" className="scroll-mt-24 border-t border-line bg-gray-50 py-28 md:py-36">
+      <section id="how-it-works" className="scroll-mt-24 border-t border-line bg-gray-50 py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <Reveal className="max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
@@ -151,7 +150,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-white py-28 md:py-36">
+      <section className="border-t border-line bg-white py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <Reveal className="max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
@@ -175,7 +174,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-gray-50 py-28 md:py-36">
+      <section className="border-t border-line bg-gray-50 py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <Reveal className="max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
@@ -209,7 +208,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-white py-28 md:py-36">
+      <section className="border-t border-line bg-white py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <Reveal className="max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
@@ -236,7 +235,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-gray-50 py-28 md:py-36">
+      <section className="border-t border-line bg-gray-50 py-16 md:py-24">
         <div className="mx-auto max-w-4xl px-6 text-center md:px-10">
           <Reveal>
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
@@ -254,7 +253,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-ink py-28 md:py-36">
+      <section className="border-t border-line bg-ink py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <Reveal className="max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue-soft/80 uppercase">
@@ -298,7 +297,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-white py-28 md:py-36">
+      <section className="border-t border-line bg-white py-16 md:py-24">
         <div className="mx-auto max-w-3xl px-6 text-center md:px-10">
           <Reveal>
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
@@ -316,7 +315,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-gray-50 py-28 md:py-36">
+      <section className="border-t border-line bg-gray-50 py-16 md:py-24">
         <div className="mx-auto flex max-w-4xl flex-col items-center px-6 text-center md:px-10">
           <Reveal>
             <h2 className="text-3xl font-semibold tracking-tight text-ink md:text-5xl">
