@@ -20,6 +20,7 @@ import IndustryCard from "@/components/IndustryCard";
 import Reveal from "@/components/Reveal";
 import JourneyFlow from "@/components/JourneyFlow";
 import ConnectionAccent from "@/components/ConnectionAccent";
+import Timeline from "@/components/Timeline";
 import { capabilities } from "@/lib/capabilities";
 import { industries } from "@/lib/industries";
 
@@ -232,6 +233,24 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="border-t border-line bg-gray-50 py-28 md:py-36">
+        <div className="mx-auto max-w-4xl px-6 text-center md:px-10">
+          <Reveal>
+            <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
+              Future Vision
+            </p>
+            <h2 className="mt-4 text-balance text-2xl leading-snug font-semibold tracking-tight text-ink md:text-3xl">
+              We build intelligent technology companies that transform
+              customer demand into measurable business growth.
+            </h2>
+          </Reveal>
+
+          <Reveal delay={100} className="mt-16">
+            <Timeline />
+          </Reveal>
         </div>
       </section>
 
