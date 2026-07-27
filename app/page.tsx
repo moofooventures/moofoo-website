@@ -19,6 +19,7 @@ import CapabilityCard from "@/components/CapabilityCard";
 import IndustryCard from "@/components/IndustryCard";
 import Reveal from "@/components/Reveal";
 import JourneyFlow from "@/components/JourneyFlow";
+import ConnectionAccent from "@/components/ConnectionAccent";
 import { capabilities } from "@/lib/capabilities";
 import { industries } from "@/lib/industries";
 
@@ -184,7 +185,11 @@ export default function Home() {
             </h2>
           </Reveal>
 
-          <Reveal className="mt-14 rounded-2xl border border-line bg-white p-8 md:p-10">
+          <Reveal className="mt-10">
+            <ConnectionAccent />
+          </Reveal>
+
+          <Reveal className="mt-8 rounded-2xl border border-line bg-white p-8 md:p-10">
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {techItems.map((item) => (
                 <div key={item.label} className="flex items-start gap-3">
