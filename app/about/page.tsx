@@ -1,129 +1,140 @@
 import type { Metadata } from "next";
+import { Gauge, ShieldCheck, Sparkles, Eye } from "lucide-react";
 import Button from "@/components/Button";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "About | MooFoo Ventures",
   description:
-    "MooFoo Ventures LLC builds AI-driven lead generation systems, performance marketing platforms, and digital businesses that connect customers with trusted companies.",
+    "MooFoo Ventures LLC is a New Jersey-based technology and performance marketing company building AI-assisted digital businesses and consumer acquisition systems.",
+  alternates: { canonical: "/about" },
 };
 
-const values = [
+const principles = [
   {
-    index: "01",
-    title: "Build with conviction",
-    description:
-      "We commit fully to every product and company we build, rather than spreading thin across everything at once.",
+    icon: Gauge,
+    title: "Performance over promises",
+    description: "We build toward measurable outcomes, not exaggerated claims.",
   },
   {
-    index: "02",
-    title: "Operate for the long term",
+    icon: ShieldCheck,
+    title: "Compliance by default",
     description:
-      "We favor durable, compounding businesses over short-term wins, and we build teams and products to match.",
+      "Every campaign is built with consumer protection and applicable regulations in mind.",
   },
   {
-    index: "03",
-    title: "Craft is not optional",
-    description:
-      "From product to brand to the smallest details, we hold everything we ship to a premium standard.",
+    icon: Sparkles,
+    title: "Craft in execution",
+    description: "From landing pages to tracking systems, execution is held to a high standard.",
   },
   {
-    index: "04",
-    title: "Discipline over hype",
-    description:
-      "We move deliberately, make decisions with rigor, and let results speak instead of noise.",
+    icon: Eye,
+    title: "Transparency with partners",
+    description: "Networks, advertisers, and partners can expect clear, honest reporting.",
   },
 ];
 
 export default function About() {
   return (
     <>
-      <section className="border-b border-line bg-paper">
-        <div className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
-          <p className="gold-underline w-fit text-xs tracking-[0.3em] text-gold-deep uppercase">
-            About
-          </p>
-          <h1 className="mt-8 max-w-3xl text-balance font-serif-display text-4xl leading-tight text-black md:text-5xl">
-            AI, software, and growth systems, built to last.
-          </h1>
-          <p className="mt-6 max-w-2xl text-balance text-base leading-relaxed text-muted md:text-lg">
-            MooFoo Ventures LLC exists to build companies with real staying
-            power &mdash; in AI software, performance marketing, and digital
-            growth. We combine deep technical execution with the discipline
-            of a performance-driven operator.
-          </p>
+      <section className="border-b border-line bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-28 md:px-10 md:py-36">
+          <Reveal>
+            <p className="accent-underline w-fit text-xs font-medium tracking-[0.25em] text-blue uppercase">
+              About
+            </p>
+            <h1 className="mt-8 max-w-3xl text-balance text-4xl leading-tight font-semibold tracking-tight text-ink md:text-6xl">
+              A technology and performance marketing company.
+            </h1>
+            <p className="mt-6 max-w-2xl text-balance text-lg leading-relaxed text-muted">
+              MooFoo Ventures LLC is a New Jersey-based technology and
+              performance marketing company building AI-assisted digital
+              businesses and consumer acquisition systems.
+            </p>
+          </Reveal>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-24 md:px-10">
-        <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
-          <div>
-            <p className="text-xs tracking-[0.2em] text-gold-deep uppercase">
-              Our Mission
+      <section className="bg-gray-50 py-28 md:py-36">
+        <div className="mx-auto grid max-w-7xl gap-16 px-6 md:grid-cols-2 md:px-10">
+          <Reveal>
+            <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
+              Mission
             </p>
-            <h2 className="mt-4 font-serif-display text-3xl text-black">
-              Build enduring companies, not fleeting trends.
+            <h2 className="mt-4 text-2xl font-semibold tracking-tight text-ink md:text-3xl">
+              Inbound acquisition, done honestly.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted">
-              We believe the best businesses are built deliberately: sound
-              fundamentals, distinctive brand, and a relentless focus on the
-              customer. MooFoo Ventures brings technical expertise, operating
-              experience, and hands-on craft to every company we build.
+              We build systems that connect consumers who are already looking
+              for help with providers who can offer it &mdash; measured and
+              compliant at every step.
             </p>
-          </div>
-          <div>
-            <p className="text-xs tracking-[0.2em] text-gold-deep uppercase">
-              Our Approach
+          </Reveal>
+          <Reveal delay={100}>
+            <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
+              Responsible Use of AI
             </p>
-            <h2 className="mt-4 font-serif-display text-3xl text-black">
-              Product and performance, under one roof.
+            <h2 className="mt-4 text-2xl font-semibold tracking-tight text-ink md:text-3xl">
+              AI assists. People decide.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted">
-              We build AI products and software platforms in-house, then
-              pair them with performance marketing systems engineered to
-              drive measurable customer growth. Every company we build
-              holds the same standard of craft.
+              AI supports research, content development, reporting, and
+              quality analysis across our campaigns. Every AI-assisted
+              output is reviewed and directed by our team.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      <section className="border-t border-line bg-paper">
-        <div className="mx-auto max-w-7xl px-6 py-24 md:px-10">
-          <p className="text-xs tracking-[0.2em] text-gold-deep uppercase">
-            What We Value
-          </p>
-          <h2 className="mt-4 max-w-xl font-serif-display text-3xl text-black md:text-4xl">
-            Principles that guide every decision.
-          </h2>
+      <section className="border-t border-line bg-white py-28 md:py-36">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <Reveal className="max-w-2xl">
+            <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
+              Operating Principles
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+              What guides our work.
+            </h2>
+          </Reveal>
 
-          <div className="mt-16 grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2">
-            {values.map((value) => (
-              <div key={value.index} className="flex gap-6">
-                <span className="font-serif-display text-lg text-gold">
-                  {value.index}
-                </span>
-                <div>
-                  <h3 className="font-serif-display text-xl text-black">
-                    {value.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">
-                    {value.description}
-                  </p>
-                </div>
-              </div>
+          <div className="mt-14 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            {principles.map((principle, i) => (
+              <Reveal key={principle.title} delay={i * 80}>
+                <principle.icon
+                  className="h-6 w-6 text-blue"
+                  strokeWidth={1.5}
+                  aria-hidden="true"
+                />
+                <h3 className="mt-5 text-base font-semibold text-ink">
+                  {principle.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">
+                  {principle.description}
+                </p>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-black">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 py-20 md:flex-row md:items-center md:px-10">
-          <h2 className="max-w-xl font-serif-display text-3xl text-white md:text-4xl">
-            Want to know more about how we work?
-          </h2>
-          <Button href="/contact" variant="gold">
-            Contact Us
-          </Button>
+      <section className="border-t border-line bg-gray-50 py-28 md:py-36">
+        <div className="mx-auto flex max-w-4xl flex-col items-center px-6 text-center md:px-10">
+          <Reveal>
+            <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
+              Transparency
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+              Trust is built on disclosure.
+            </h2>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted">
+              We disclose how our model works, how compensation is earned,
+              and where our traffic comes from &mdash; because durable
+              partnerships depend on it.
+            </p>
+            <Button href="/contact" className="mx-auto mt-8">
+              Get in Touch
+            </Button>
+          </Reveal>
         </div>
       </section>
     </>

@@ -1,79 +1,160 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { PARTNERSHIP_TYPES } from "@/lib/contact";
+import { SubmitButton } from "@/components/Button";
 
-const CONTACT_EMAIL = "hello@moofooventures.com";
+type Status = "idle" | "submitting" | "success" | "error";
 
 export default function ContactForm() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const subject = encodeURIComponent(`Inquiry from ${name || "website visitor"}`);
-    const body = encodeURIComponent(
-      `${message}\n\n---\nName: ${name}\nEmail: ${email}`,
+    setStatus("submitting");
+    setErrorMessage("");
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const payload = {
+      name: data.get("name"),
+      email: data.get("email"),
+      company: data.get("company"),
+      partnershipType: data.get("partnershipType"),
+      message: data.get("message"),
+      honeypot: data.get("website"),
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const result = await res.json();
+
+      if (!res.ok) {
+        setStatus("error");
+        setErrorMessage(result.error ?? "Something went wrong. Please try again.");
+        return;
+      }
+
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
+      setErrorMessage("Something went wrong. Please try again.");
+    }
+  }
+
+  if (status === "success") {
+    return (
+      <div className="rounded-xl border border-line bg-blue-soft/40 p-8 text-center">
+        <p className="text-base font-semibold text-ink">Message sent.</p>
+        <p className="mt-2 text-sm leading-relaxed text-muted">
+          Thanks for reaching out &mdash; we&apos;ll be in touch shortly.
+        </p>
+      </div>
     );
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
   }
 
   const inputStyles =
-    "w-full border-b border-line bg-transparent py-3 text-sm text-ink placeholder:text-muted focus:border-gold focus:outline-none";
+    "w-full rounded-lg border border-line bg-white px-4 py-3 text-sm text-ink placeholder:text-muted/70 transition-colors focus:border-blue focus:outline-none";
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+      <div className="hidden" aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
+
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <div>
+          <label htmlFor="name" className="text-xs font-medium tracking-[0.1em] text-muted uppercase">
+            Name
+          </label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            required
+            placeholder="Your name"
+            className={`${inputStyles} mt-2`}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="email" className="text-xs font-medium tracking-[0.1em] text-muted uppercase">
+            Business Email
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            placeholder="you@company.com"
+            className={`${inputStyles} mt-2`}
+          />
+        </div>
+      </div>
+
       <div>
-        <label htmlFor="name" className="text-xs tracking-[0.15em] text-muted uppercase">
-          Name
+        <label htmlFor="company" className="text-xs font-medium tracking-[0.1em] text-muted uppercase">
+          Company
         </label>
         <input
-          id="name"
+          id="company"
+          name="company"
           type="text"
-          required
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Your name"
+          placeholder="Company name"
           className={`${inputStyles} mt-2`}
         />
       </div>
 
       <div>
-        <label htmlFor="email" className="text-xs tracking-[0.15em] text-muted uppercase">
-          Email
+        <label htmlFor="partnershipType" className="text-xs font-medium tracking-[0.1em] text-muted uppercase">
+          Partnership Type
         </label>
-        <input
-          id="email"
-          type="email"
+        <select
+          id="partnershipType"
+          name="partnershipType"
           required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="you@company.com"
+          defaultValue=""
           className={`${inputStyles} mt-2`}
-        />
+        >
+          <option value="" disabled>
+            Select one
+          </option>
+          {PARTNERSHIP_TYPES.map((type) => (
+            <option key={type} value={type}>
+              {type}
+            </option>
+          ))}
+        </select>
       </div>
 
       <div>
-        <label htmlFor="message" className="text-xs tracking-[0.15em] text-muted uppercase">
+        <label htmlFor="message" className="text-xs font-medium tracking-[0.1em] text-muted uppercase">
           Message
         </label>
         <textarea
           id="message"
+          name="message"
           required
           rows={5}
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          placeholder="Tell us a little about what you're building..."
+          placeholder="Tell us about your network, platform, or partnership idea..."
           className={`${inputStyles} mt-2 resize-none`}
         />
       </div>
 
-      <button
-        type="submit"
-        className="inline-flex w-fit items-center gap-2 bg-black px-7 py-3 text-xs tracking-[0.2em] text-white uppercase transition-colors hover:bg-gold hover:text-black"
-      >
-        Send Message
-      </button>
+      {status === "error" && (
+        <p className="text-sm text-red-600">{errorMessage}</p>
+      )}
+
+      <SubmitButton type="submit" disabled={status === "submitting"} className="w-full sm:w-fit">
+        {status === "submitting" ? "Sending..." : "Send Message"}
+      </SubmitButton>
     </form>
   );
 }

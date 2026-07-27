@@ -1,29 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --color-black: #0a0a0a;
-  --color-ink: #121212;
+  --color-ink: #0a1424;
+  --color-muted: #5b6472;
   --color-white: #ffffff;
-  --color-paper: #fafaf9;
-  --color-muted: #6b6b6b;
-  --color-line: #e6e4e0;
-  --color-gold: #c9a96a;
-  --color-gold-soft: #e4d3ab;
-  --color-gold-deep: #9c7c3f;
+  --color-gray-50: #f7f8fa;
+  --color-gray-100: #eef1f4;
+  --color-line: #e4e7ec;
+  --color-blue: #0b5ca8;
+  --color-blue-deep: #073e73;
+  --color-blue-soft: #eaf2fb;
+  --color-metal: #b7bec7;
+  --color-hero-navy: #0c1b39;
 }
 
 @theme inline {
-  --color-black: var(--color-black);
   --color-ink: var(--color-ink);
-  --color-white: var(--color-white);
-  --color-paper: var(--color-paper);
   --color-muted: var(--color-muted);
+  --color-white: var(--color-white);
+  --color-gray-50: var(--color-gray-50);
+  --color-gray-100: var(--color-gray-100);
   --color-line: var(--color-line);
-  --color-gold: var(--color-gold);
-  --color-gold-soft: var(--color-gold-soft);
-  --color-gold-deep: var(--color-gold-deep);
+  --color-blue: var(--color-blue);
+  --color-blue-deep: var(--color-blue-deep);
+  --color-blue-soft: var(--color-blue-soft);
+  --color-metal: var(--color-metal);
+  --color-hero-navy: var(--color-hero-navy);
   --font-sans: var(--font-inter);
-  --font-serif: var(--font-playfair);
 }
 
 html {
@@ -37,28 +40,76 @@ body {
 }
 
 ::selection {
-  background: var(--color-gold-soft);
-  color: var(--color-black);
-}
-
-.font-serif-display {
-  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  background: var(--color-blue-soft);
+  color: var(--color-ink);
 }
 
 .text-balance {
   text-wrap: balance;
 }
 
-.gold-underline {
+.accent-underline {
   position: relative;
 }
 
-.gold-underline::after {
+.accent-underline::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: -0.35em;
-  height: 1px;
+  height: 2px;
   width: 2.5rem;
-  background: var(--color-gold);
+  background: var(--color-blue);
+}
+
+/* Scroll-reveal: elements start hidden/offset, then transition in once the
+   `is-visible` class is applied by the useScrollReveal hook. */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Nav glass effect, toggled once the page scrolls past a threshold. */
+.nav-glass {
+  background: color-mix(in srgb, var(--color-white) 82%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom-color: var(--color-line);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }

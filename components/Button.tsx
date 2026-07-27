@@ -1,28 +1,49 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
+import type { ButtonHTMLAttributes, ReactNode } from "react";
+
+type Variant = "primary" | "outline";
+
+const base =
+  "inline-flex w-fit items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-all duration-200";
+
+const variants: Record<Variant, string> = {
+  primary:
+    "bg-ink text-white hover:-translate-y-0.5 hover:bg-blue-deep hover:shadow-lg hover:shadow-blue/10",
+  outline:
+    "border border-line text-ink hover:-translate-y-0.5 hover:border-blue hover:text-blue",
+};
 
 export default function Button({
   href,
   children,
-  variant = "solid",
+  variant = "primary",
+  className = "",
 }: {
   href: string;
   children: ReactNode;
-  variant?: "solid" | "outline" | "gold";
+  variant?: Variant;
+  className?: string;
 }) {
-  const base =
-    "inline-flex w-fit items-center gap-2 px-7 py-3 text-xs tracking-[0.2em] uppercase transition-colors";
-  const variants = {
-    solid: "bg-black text-white hover:bg-gold hover:text-black",
-    outline:
-      "border border-black text-black hover:border-gold hover:text-gold-deep",
-    gold: "bg-gold text-black hover:bg-white",
-  };
-  const styles = variants[variant];
-
   return (
-    <Link href={href} className={`${base} ${styles}`}>
+    <Link href={href} className={`${base} ${variants[variant]} ${className}`}>
       {children}
     </Link>
+  );
+}
+
+export function SubmitButton({
+  children,
+  variant = "primary",
+  className = "",
+  ...rest
+}: {
+  children: ReactNode;
+  variant?: Variant;
+  className?: string;
+} & ButtonHTMLAttributes<HTMLButtonElement>) {
+  return (
+    <button className={`${base} ${variants[variant]} ${className}`} {...rest}>
+      {children}
+    </button>
   );
 }
