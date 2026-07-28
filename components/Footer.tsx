@@ -84,12 +84,9 @@ export default function Footer() {
           <p>
             &copy; {year} {siteConfig.legalName}. All rights reserved.
           </p>
-          <div className="flex flex-col gap-1 md:items-end">
-            <a href={`mailto:${siteConfig.email}`} className="transition-colors hover:text-blue">
-              {siteConfig.email}
-            </a>
-            <p>{siteConfig.location}</p>
-          </div>
+          <a href={`mailto:${siteConfig.email}`} className="transition-colors hover:text-blue">
+            {siteConfig.email}
+          </a>
         </div>
       </div>
     </footer>

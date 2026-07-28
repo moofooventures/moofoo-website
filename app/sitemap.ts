@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/site";
 
 const routes = [
   "",
-  "/capabilities",
+  "/solutions",
   "/how-it-works",
   "/industries",
   "/about",

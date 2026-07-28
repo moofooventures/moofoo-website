@@ -12,10 +12,10 @@ import Button from "@/components/Button";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Capabilities | MooFoo Ventures",
+  title: "Solutions | MooFoo Ventures",
   description:
     "Inbound lead generation, pay-per-call campaign development, landing-page development, search traffic acquisition, call tracking, AI-assisted analysis, and performance reporting.",
-  alternates: { canonical: "/capabilities" },
+  alternates: { canonical: "/solutions" },
 };
 
 const items = [
@@ -62,21 +62,21 @@ const items = [
   },
 ];
 
-export default function Capabilities() {
+export default function Solutions() {
   return (
     <>
       <section className="border-b border-line bg-white">
         <div className="mx-auto max-w-7xl px-6 py-28 md:px-10 md:py-36">
           <Reveal>
             <p className="accent-underline w-fit text-xs font-medium tracking-[0.25em] text-blue uppercase">
-              Capabilities
+              Solutions
             </p>
             <h1 className="mt-8 max-w-3xl text-balance text-4xl leading-tight font-semibold tracking-tight text-ink md:text-6xl">
               Full-stack inbound acquisition, built for accountability.
             </h1>
             <p className="mt-6 max-w-2xl text-balance text-lg leading-relaxed text-muted">
               From search traffic to call routing to reporting, every
-              capability is designed around measurable performance.
+              solution is designed around measurable performance.
             </p>
           </Reveal>
         </div>

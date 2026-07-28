@@ -6,7 +6,7 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "About | MooFoo Ventures",
   description:
-    "MooFoo Ventures LLC is a New Jersey-based technology and performance marketing company building AI-assisted digital businesses and consumer acquisition systems.",
+    "MooFoo Ventures LLC is a technology and performance marketing company building AI-assisted digital businesses and consumer acquisition systems.",
   alternates: { canonical: "/about" },
 };
 
@@ -47,9 +47,9 @@ export default function About() {
               A technology and performance marketing company.
             </h1>
             <p className="mt-6 max-w-2xl text-balance text-lg leading-relaxed text-muted">
-              MooFoo Ventures LLC is a New Jersey-based technology and
-              performance marketing company building AI-assisted digital
-              businesses and consumer acquisition systems.
+              MooFoo Ventures LLC is a technology and performance marketing
+              company building AI-assisted digital businesses and consumer
+              acquisition systems.
             </p>
           </Reveal>
         </div>

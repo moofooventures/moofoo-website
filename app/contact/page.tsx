@@ -48,7 +48,6 @@ export default function Contact() {
                 Company
               </p>
               <p className="mt-2 text-lg text-ink">{siteConfig.legalName}</p>
-              <p className="mt-1 text-sm text-muted">{siteConfig.location}</p>
             </div>
           </Reveal>
 
