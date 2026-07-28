@@ -172,12 +172,12 @@ export default function Home() {
       <MarketingMarquee />
 
       <section className="border-t border-line bg-gray-50 pt-4 pb-4 md:pt-6 md:pb-6">
-        <div className="mx-auto max-w-7xl px-4 md:px-10">
-          <Reveal className="mx-auto max-w-2xl text-center sm:mx-0 sm:text-left">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <Reveal className="max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
               Who We Work With
             </p>
-            <div className="mt-4 flex flex-col items-center gap-4 text-center sm:flex-row sm:items-start sm:text-left">
+            <div className="mt-4 flex items-start gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-soft text-blue">
                 <Handshake className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
               </div>
@@ -213,12 +213,12 @@ export default function Home() {
       </section>
 
       <section id="how-it-works" className="scroll-mt-24 border-t border-line bg-gray-50 pt-4 pb-4 md:pt-6 md:pb-6">
-        <div className="mx-auto max-w-7xl px-4 md:px-10">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
           <Reveal className="flex justify-center">
             <ProcessAnimation />
           </Reveal>
 
-          <Reveal className="mt-10 max-w-2xl mx-auto text-center sm:mx-0 sm:text-left">
+          <Reveal className="mt-10 max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
               How MooFoo Ventures Works
             </p>
@@ -243,8 +243,8 @@ export default function Home() {
       </section>
 
       <section className="border-t border-line bg-white py-4 md:py-6">
-        <div className="mx-auto max-w-7xl px-4 md:px-10">
-          <Reveal className="mx-auto max-w-2xl text-center sm:mx-0 sm:text-left">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <Reveal className="max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
               Industries
             </p>
@@ -267,8 +267,8 @@ export default function Home() {
       </section>
 
       <section className="border-t border-line bg-hero-navy py-4 md:py-6">
-        <div className="mx-auto max-w-7xl px-4 md:px-10">
-          <Reveal className="mx-auto max-w-2xl text-center sm:mx-0 sm:text-left">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <Reveal className="max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue-soft/80 uppercase">
               Technology &amp; Measurement
             </p>
@@ -301,8 +301,8 @@ export default function Home() {
       </section>
 
       <section className="border-t border-line bg-white py-4 md:py-6">
-        <div className="mx-auto max-w-7xl px-4 md:px-10">
-          <Reveal className="mx-auto max-w-2xl text-center sm:mx-0 sm:text-left">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <Reveal className="max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
               Why MooFoo Ventures
             </p>
@@ -328,7 +328,7 @@ export default function Home() {
       </section>
 
       <section className="border-t border-line bg-gray-50 py-4 md:py-6">
-        <div className="mx-auto max-w-4xl px-4 text-center md:px-10">
+        <div className="mx-auto max-w-4xl px-6 text-center md:px-10">
           <Reveal>
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
               Future Vision
@@ -346,8 +346,8 @@ export default function Home() {
       </section>
 
       <section className="border-t border-line bg-ink py-4 md:py-6">
-        <div className="mx-auto max-w-7xl px-4 md:px-10">
-          <Reveal className="mx-auto max-w-2xl text-center sm:mx-0 sm:text-left">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <Reveal className="max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue-soft/80 uppercase">
               Partnership
             </p>
@@ -390,7 +390,7 @@ export default function Home() {
       </section>
 
       <section className="border-t border-line bg-white py-4 md:py-6">
-        <div className="mx-auto max-w-7xl px-4 md:px-10">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
             <Reveal>
               <p className="accent-underline w-fit text-xs font-medium tracking-[0.25em] text-blue uppercase">
