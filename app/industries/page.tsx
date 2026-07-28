@@ -34,7 +34,7 @@ export default function Industries() {
 
       <section className="bg-gray-50 py-28 md:py-36">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
             {industries.map((industry, i) => (
               <Reveal key={industry.slug} delay={i * 60}>
                 <IndustryCard industry={industry} />

@@ -1,37 +1,98 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import footerImage from "@/public/footerimage.png";
 import {
-  Search,
-  MousePointerClick,
-  PhoneCall,
+  Fingerprint,
+  CheckCircle2,
   Route,
-  Target,
-  BadgeCheck,
-  BarChart3,
+  RefreshCcw,
   Gauge,
   Ruler,
   BrainCog,
   ShieldCheck,
+  Handshake,
+  Network,
+  Megaphone,
+  Cpu,
+  Compass,
+  Shield,
+  Target,
+  BarChart3,
+  Lock,
+  ArrowRight,
+  Calendar,
+  Users,
 } from "lucide-react";
 import Button from "@/components/Button";
 import HeroImage from "@/components/HeroImage";
 import MarketingMarquee from "@/components/MarketingMarquee";
-import CapabilityCard from "@/components/CapabilityCard";
 import IndustryCard from "@/components/IndustryCard";
 import Reveal from "@/components/Reveal";
 import JourneyFlow from "@/components/JourneyFlow";
-import ConnectionAccent from "@/components/ConnectionAccent";
+import ProcessAnimation from "@/components/ProcessAnimation";
+import PipelineSchematic from "@/components/PipelineSchematic";
 import Timeline from "@/components/Timeline";
-import { capabilities } from "@/lib/capabilities";
 import { industries } from "@/lib/industries";
 
-const techItems = [
-  { icon: Search, label: "Search-Intent Analysis" },
-  { icon: MousePointerClick, label: "Landing-Page Optimization" },
-  { icon: PhoneCall, label: "Call Tracking & Attribution" },
-  { icon: Route, label: "Geographic Routing" },
-  { icon: Target, label: "Conversion Measurement" },
-  { icon: BadgeCheck, label: "Quality Monitoring" },
-  { icon: BarChart3, label: "AI-Assisted Reporting" },
+const metricCards = [
+  {
+    icon: Fingerprint,
+    title: "Source Attribution",
+    status: "Tracked",
+    description: "Every inquiry is tied back to its originating source.",
+  },
+  {
+    icon: CheckCircle2,
+    title: "Qualification Status",
+    status: "Rules Applied",
+    description: "Inquiries are evaluated against campaign-specific criteria.",
+  },
+  {
+    icon: Route,
+    title: "Routing Outcome",
+    status: "Routed",
+    description: "Qualified demand is directed to the appropriate destination.",
+  },
+  {
+    icon: RefreshCcw,
+    title: "Conversion Feedback",
+    status: "Reporting",
+    description: "Outcome data flows back to refine future campaigns.",
+  },
+];
+
+const partners = [
+  {
+    icon: Network,
+    title: "Affiliate Networks",
+    description:
+      "We develop independent consumer acquisition properties that can support approved pay-per-call and lead-generation campaigns.",
+  },
+  {
+    icon: Megaphone,
+    title: "Direct Advertisers",
+    description:
+      "We help advertisers reach consumers who are actively researching and requesting relevant services.",
+  },
+  {
+    icon: Cpu,
+    title: "Technology Platforms",
+    description:
+      "We work with call-tracking, routing, analytics, hosting and automation providers that strengthen acquisition infrastructure.",
+  },
+  {
+    icon: Compass,
+    title: "Strategic Partners",
+    description:
+      "We are open to joint ventures, distribution relationships and technology partnerships in high-intent consumer markets.",
+  },
+];
+
+const trustBadges = [
+  { icon: Shield, label: "Compliant and Ethical" },
+  { icon: Target, label: "Consumer Intent Focused" },
+  { icon: BarChart3, label: "Measurable Performance" },
+  { icon: Lock, label: "Transparent and Secure" },
 ];
 
 const whyItems = [
@@ -68,20 +129,23 @@ export default function Home() {
   return (
     <>
       <section className="relative overflow-hidden bg-hero-navy">
-        <div className="mx-auto grid max-w-7xl items-center gap-6 px-6 pt-4 pb-8 md:grid-cols-[1.4fr_1.6fr] md:px-10 md:pt-6 md:pb-10">
+        <div className="mx-auto grid max-w-7xl items-center gap-6 px-6 pt-4 pb-4 md:grid-cols-[1.4fr_1.6fr] md:px-10 md:pt-6 md:pb-6">
           <div>
             <p className="accent-underline w-fit text-xs font-medium tracking-[0.25em] text-blue-soft/80 uppercase">
               Intelligent Customer Acquisition
             </p>
-            <h1 className="mt-8 text-balance text-3xl leading-[1.1] font-semibold tracking-tight text-white md:text-4xl lg:text-5xl">
-              Building Digital Systems That Generate Qualified Customers.
+            <h1 className="mt-6 text-balance text-2xl leading-[1.15] font-semibold tracking-tight text-white md:text-3xl lg:text-4xl">
+              We Build Digital Properties That Turn Consumer Intent Into
+              Qualified Calls and Leads.
             </h1>
-            <p className="mt-7 text-balance text-lg leading-relaxed text-white/70">
-              AI-powered systems that identify demand, qualify
-              opportunities, intelligently route customers, and drive
-              measurable business growth.
+            <p className="mt-5 text-balance text-sm leading-normal text-white/70 md:text-base">
+              MooFoo Ventures develops AI-assisted customer acquisition
+              systems for high-intent consumer markets. We build the
+              digital properties, tracking infrastructure, qualification
+              logic and routing systems that connect consumers with
+              participating advertisers and service providers.
             </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-6 flex flex-col gap-4 sm:flex-row">
               <Button href="/contact" className="!bg-white !text-ink hover:!bg-blue-soft">
                 Get In Touch
               </Button>
@@ -93,9 +157,9 @@ export default function Home() {
                 How It Works
               </Button>
             </div>
-            <p className="mt-8 text-xs font-medium tracking-[0.1em] text-white/50 uppercase">
-              AI Customer Acquisition &bull; Pay Per Call &bull; Lead
-              Generation &bull; AI Software
+            <p className="mt-6 text-xs font-medium tracking-[0.1em] text-white/50 uppercase">
+              Pay Per Call &bull; Inbound Lead Generation &bull; AI-Assisted
+              Qualification &bull; Call Tracking &bull; Geographic Routing
             </p>
           </div>
 
@@ -107,31 +171,56 @@ export default function Home() {
 
       <MarketingMarquee />
 
-      <section className="border-t border-line bg-white py-16 md:py-24">
+      <section className="border-t border-line bg-gray-50 pt-4 pb-4 md:pt-6 md:pb-6">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <Reveal className="max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
-              Capabilities
+              Who We Work With
             </p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-ink md:text-4xl">
-              What we build.
-            </h2>
+            <div className="mt-4 flex items-start gap-4">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-soft text-blue">
+                <Handshake className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
+              </div>
+              <div>
+                <h2 className="text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+                  Built for Performance-Based Partnerships
+                </h2>
+                <p className="mt-4 text-base leading-relaxed text-muted">
+                  MooFoo Ventures works with organizations that value
+                  transparent acquisition, measurable customer intent and
+                  clearly defined qualification standards.
+                </p>
+              </div>
+            </div>
           </Reveal>
+
           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {capabilities.map((capability, i) => (
-              <Reveal key={capability.slug} delay={i * 80}>
-                <CapabilityCard capability={capability} />
+            {partners.map((partner, i) => (
+              <Reveal key={partner.title} delay={i * 80}>
+                <div className="group h-full rounded-2xl border border-line bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-blue/40 hover:shadow-xl hover:shadow-ink/5">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-soft text-blue transition-all duration-300 group-hover:scale-110 group-hover:bg-blue group-hover:text-white">
+                    <partner.icon className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
+                  </div>
+                  <h3 className="mt-6 text-lg font-semibold text-ink">{partner.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">
+                    {partner.description}
+                  </p>
+                </div>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="how-it-works" className="scroll-mt-24 border-t border-line bg-gray-50 py-16 md:py-24">
+      <section id="how-it-works" className="scroll-mt-24 border-t border-line bg-gray-50 pt-4 pb-4 md:pt-6 md:pb-6">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
-          <Reveal className="max-w-2xl">
+          <Reveal className="flex justify-center">
+            <ProcessAnimation />
+          </Reveal>
+
+          <Reveal className="mt-10 max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
-              How MooFoo Works
+              How MooFoo Ventures Works
             </p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-ink md:text-4xl">
               Demand becomes growth, systematically.
@@ -142,15 +231,18 @@ export default function Home() {
             <JourneyFlow />
           </div>
 
-          <Reveal className="mt-14 border-t border-line pt-8 text-sm leading-relaxed text-muted">
-            MooFoo Ventures operates independent marketing properties and may
-            connect consumers with third-party service providers. We do not
-            directly perform the underlying services.
+          <Reveal className="mt-14 flex items-start gap-4 rounded-2xl bg-ink p-6 md:p-8">
+            <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-blue-soft" strokeWidth={1.75} aria-hidden="true" />
+            <p className="text-sm leading-relaxed text-white/80">
+              <span className="font-semibold text-white">Consumer-initiated by design.</span>{" "}
+              MooFoo Ventures does not use robocalling, purchased cold-call
+              lists or unsolicited text-message campaigns.
+            </p>
           </Reveal>
         </div>
       </section>
 
-      <section className="border-t border-line bg-white py-16 md:py-24">
+      <section className="border-t border-line bg-white py-4 md:py-6">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <Reveal className="max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
@@ -164,7 +256,7 @@ export default function Home() {
               guarantee of active campaigns in every category.
             </p>
           </Reveal>
-          <div className="mt-14 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="mt-14 grid grid-cols-2 gap-6 lg:grid-cols-4">
             {industries.map((industry, i) => (
               <Reveal key={industry.slug} delay={i * 60}>
                 <IndustryCard industry={industry} />
@@ -174,41 +266,41 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-gray-50 py-16 md:py-24">
+      <section className="border-t border-line bg-hero-navy py-4 md:py-6">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <Reveal className="max-w-2xl">
-            <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
+            <p className="text-xs font-medium tracking-[0.2em] text-blue-soft/80 uppercase">
               Technology &amp; Measurement
             </p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white md:text-4xl">
               How campaigns are operated.
             </h2>
           </Reveal>
 
-          <Reveal className="mt-10">
-            <ConnectionAccent />
+          <Reveal className="mt-14 flex justify-center rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm md:p-10">
+            <PipelineSchematic />
           </Reveal>
 
-          <Reveal className="mt-8 rounded-2xl border border-line bg-white p-8 md:p-10">
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              {techItems.map((item) => (
-                <div key={item.label} className="flex items-start gap-3">
-                  <item.icon
-                    className="mt-0.5 h-5 w-5 shrink-0 text-blue"
-                    strokeWidth={1.75}
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm font-medium text-ink">
-                    {item.label}
-                  </span>
+          <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
+            {metricCards.map((card, i) => (
+              <Reveal key={card.title} delay={i * 80} className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
+                <div className="flex items-center gap-2">
+                  <card.icon className="h-4 w-4 shrink-0 text-blue-soft" strokeWidth={1.75} aria-hidden="true" />
+                  <h3 className="text-sm font-semibold text-white">{card.title}</h3>
                 </div>
-              ))}
-            </div>
-          </Reveal>
+                <span className="mt-3 inline-block rounded-full bg-blue-soft px-2.5 py-1 text-xs font-medium text-blue">
+                  {card.status}
+                </span>
+                <p className="mt-3 text-xs leading-relaxed text-white/70">
+                  {card.description}
+                </p>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="border-t border-line bg-white py-16 md:py-24">
+      <section className="border-t border-line bg-white py-4 md:py-6">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <Reveal className="max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
@@ -235,7 +327,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-gray-50 py-16 md:py-24">
+      <section className="border-t border-line bg-gray-50 py-4 md:py-6">
         <div className="mx-auto max-w-4xl px-6 text-center md:px-10">
           <Reveal>
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
@@ -253,7 +345,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-ink py-16 md:py-24">
+      <section className="border-t border-line bg-ink py-4 md:py-6">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <Reveal className="max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue-soft/80 uppercase">
@@ -297,38 +389,85 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-white py-16 md:py-24">
-        <div className="mx-auto max-w-3xl px-6 text-center md:px-10">
-          <Reveal>
-            <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
-              About
-            </p>
-            <p className="mt-6 text-balance text-xl leading-relaxed text-ink md:text-2xl">
-              MooFoo Ventures LLC is a New Jersey-based technology and
-              performance marketing company building AI-assisted digital
-              businesses and consumer acquisition systems.
-            </p>
-            <Button href="/about" variant="outline" className="mx-auto mt-8">
-              Learn More
-            </Button>
-          </Reveal>
-        </div>
-      </section>
+      <section className="border-t border-line bg-white py-4 md:py-6">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+            <Reveal>
+              <p className="accent-underline w-fit text-xs font-medium tracking-[0.25em] text-blue uppercase">
+                Partnerships That Perform
+              </p>
+              <h2 className="mt-6 text-balance text-4xl leading-tight font-bold tracking-tight md:text-5xl">
+                <span className="text-ink">Let&apos;s Build</span>
+                <br />
+                <span className="bg-gradient-to-r from-blue to-blue-soft bg-clip-text text-transparent">
+                  Measurable Growth.
+                </span>
+              </h2>
+              <p className="mt-6 max-w-xl text-balance text-base leading-relaxed text-muted md:text-lg">
+                We partner with reputable networks, advertisers, technology
+                providers, and operators to deliver qualified customers
+                through compliant, AI-assisted acquisition systems that
+                drive real results.
+              </p>
 
-      <section className="border-t border-line bg-gray-50 py-16 md:py-24">
-        <div className="mx-auto flex max-w-4xl flex-col items-center px-6 text-center md:px-10">
-          <Reveal>
-            <h2 className="text-3xl font-semibold tracking-tight text-ink md:text-5xl">
-              Let&apos;s Build Measurable Growth.
-            </h2>
-            <p className="mt-6 max-w-xl text-balance text-base leading-relaxed text-muted md:text-lg">
-              We are interested in relationships with reputable networks,
-              advertisers, technology providers, and operators in high-intent
-              consumer markets.
-            </p>
-            <Button href="/contact" className="mx-auto mt-8">
-              Start a Conversation
-            </Button>
+              <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-4">
+                {trustBadges.map((badge) => (
+                  <div key={badge.label} className="flex items-start gap-2.5">
+                    <badge.icon className="mt-0.5 h-5 w-5 shrink-0 text-blue" strokeWidth={1.75} aria-hidden="true" />
+                    <span className="text-sm font-medium text-ink">{badge.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                <Button href="/contact" className="gap-2.5">
+                  Start a Conversation
+                  <ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
+                </Button>
+                <Button href="/contact" variant="outline" className="gap-2.5">
+                  <Calendar className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
+                  Schedule a Call
+                </Button>
+              </div>
+
+              <p className="mt-5 flex items-center gap-2 text-xs text-muted">
+                <Lock className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} aria-hidden="true" />
+                We respect your time. No spam, just real opportunities.
+              </p>
+            </Reveal>
+
+            <Reveal delay={100} className="flex flex-col gap-6">
+              <div className="w-full overflow-hidden rounded-3xl border border-line bg-white">
+                <Image
+                  src={footerImage}
+                  alt="MooFoo Ventures AI-powered robotic shark, representing the intelligent systems behind our partnerships"
+                  className="h-auto w-full"
+                  sizes="(min-width: 1024px) 45vw, 90vw"
+                />
+              </div>
+
+              <div className="flex items-start gap-4 rounded-2xl border border-line bg-gray-50 p-6">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-soft text-blue">
+                  <Users className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
+                </div>
+                <div>
+                  <h3 className="text-base font-semibold text-ink">We&apos;re stronger together.</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted">
+                    Whether you&apos;re an advertiser, network, or technology
+                    provider, let&apos;s create a partnership that scales.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal className="mt-16 flex items-center justify-center gap-2 border-t border-line pt-10 text-center text-sm text-muted">
+            <ShieldCheck className="h-4 w-4 shrink-0 text-blue" strokeWidth={1.75} aria-hidden="true" />
+            <span>
+              Built on <span className="font-semibold text-blue">trust</span>. Driven by{" "}
+              <span className="font-semibold text-blue">data</span>. Focused on{" "}
+              <span className="font-semibold text-blue">results</span>.
+            </span>
           </Reveal>
         </div>
       </section>

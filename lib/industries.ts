@@ -1,57 +1,37 @@
 export type Industry = {
   slug: string;
-  icon: "HeartPulse" | "Scale" | "ShieldCheck" | "Home" | "Landmark" | "Car" | "Plane" | "LayoutGrid";
+  icon: "Home" | "ShieldCheck" | "Scale" | "Landmark";
   title: string;
   description: string;
 };
 
 export const industries: Industry[] = [
   {
-    slug: "healthcare",
-    icon: "HeartPulse",
-    title: "Healthcare",
-    description: "Consumers researching providers, treatments, and care options.",
-  },
-  {
-    slug: "legal",
-    icon: "Scale",
-    title: "Legal",
-    description: "Consumers seeking qualified legal representation.",
+    slug: "home-services",
+    icon: "Home",
+    title: "Home Services",
+    description:
+      "Inbound consumer demand across repair, replacement and property-improvement categories. Campaigns may use service-specific qualification, location-based routing and provider-availability rules.",
   },
   {
     slug: "insurance",
     icon: "ShieldCheck",
     title: "Insurance",
-    description: "High-intent shoppers comparing coverage and providers.",
+    description:
+      "Consumer acquisition opportunities built around people actively researching coverage options. Campaign development depends on carrier, agency, licensing and network requirements.",
   },
   {
-    slug: "home-services",
-    icon: "Home",
-    title: "Home Services",
-    description: "Consumers searching for trusted home repair and improvement help.",
+    slug: "legal-services",
+    icon: "Scale",
+    title: "Legal Services",
+    description:
+      "Consumer-initiated inquiries in approved practice areas, supported by transparent advertising disclosures and campaign-specific qualification criteria.",
   },
   {
-    slug: "financial",
+    slug: "consumer-financial-services",
     icon: "Landmark",
-    title: "Financial",
-    description: "Consumers evaluating financial products and services.",
-  },
-  {
-    slug: "automotive",
-    icon: "Car",
-    title: "Automotive",
-    description: "Consumers researching vehicles, service, and financing.",
-  },
-  {
-    slug: "travel",
-    icon: "Plane",
-    title: "Travel",
-    description: "Consumers planning trips and comparing travel options.",
-  },
-  {
-    slug: "more-coming",
-    icon: "LayoutGrid",
-    title: "More Coming",
-    description: "Additional consumer verticals we evaluate for future development.",
+    title: "Consumer Financial Services",
+    description:
+      "Demand-generation opportunities for approved financial products and services, subject to advertiser requirements and applicable marketing regulations.",
   },
 ];

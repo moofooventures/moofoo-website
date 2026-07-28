@@ -1,14 +1,44 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Search, Sparkles, Filter, Route, TrendingUp } from "lucide-react";
+import { Search, PhoneCall, Filter, Route, TrendingUp } from "lucide-react";
 
 const stages = [
-  { icon: Search, label: "Demand", description: "Consumers actively search for help." },
-  { icon: Sparkles, label: "AI Intelligence", description: "Our systems process and evaluate every inquiry." },
-  { icon: Filter, label: "Qualification", description: "Only high-intent, compliant inquiries continue." },
-  { icon: Route, label: "Routing", description: "Qualified demand is routed to the right destination." },
-  { icon: TrendingUp, label: "Growth", description: "Performance data compounds into measurable growth." },
+  {
+    icon: Search,
+    number: "01",
+    label: "Capture Demand",
+    description:
+      "Consumers discover a MooFoo-operated property while independently researching a service or solution.",
+  },
+  {
+    icon: PhoneCall,
+    number: "02",
+    label: "Collect Intent",
+    description:
+      "The consumer voluntarily places a call or submits an inquiry requesting information or assistance.",
+  },
+  {
+    icon: Filter,
+    number: "03",
+    label: "Evaluate the Inquiry",
+    description:
+      "Campaign rules evaluate factors such as location, requested service, timing and demonstrated intent.",
+  },
+  {
+    icon: Route,
+    number: "04",
+    label: "Route Qualified Demand",
+    description:
+      "Eligible inquiries are routed through approved technology to participating networks, advertisers or providers.",
+  },
+  {
+    icon: TrendingUp,
+    number: "05",
+    label: "Measure and Improve",
+    description:
+      "Source, quality and conversion data are reviewed to improve campaign performance and consumer experience.",
+  },
 ];
 
 export default function JourneyFlow() {
@@ -32,7 +62,7 @@ export default function JourneyFlow() {
 
   return (
     <div ref={ref}>
-      <div className="relative flex flex-col gap-10 md:flex-row md:items-start md:gap-0">
+      <div className="relative flex flex-col gap-10 md:flex-row md:items-start md:gap-6">
         <div
           className="absolute top-6 right-6 left-6 hidden h-px bg-line md:block"
           aria-hidden="true"
@@ -46,7 +76,7 @@ export default function JourneyFlow() {
         {stages.map((stage, i) => {
           const isActive = i < activeStages;
           return (
-            <div key={stage.label} className="relative flex flex-1 flex-col items-start md:items-center md:px-4 md:text-center">
+            <div key={stage.label} className="relative flex flex-1 flex-col items-start md:items-center md:text-center">
               <div
                 className={`z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border transition-colors duration-500 ${
                   isActive ? "border-blue bg-ink text-white" : "border-line bg-white text-muted"
@@ -55,8 +85,10 @@ export default function JourneyFlow() {
               >
                 <stage.icon className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
               </div>
-              <h3 className="mt-4 text-sm font-semibold text-ink">{stage.label}</h3>
-              <p className="mt-1 max-w-[180px] text-xs leading-relaxed text-muted">
+              <h3 className="mt-4 text-sm font-semibold text-ink">
+                <span className="text-blue">{stage.number}</span> &mdash; {stage.label}
+              </h3>
+              <p className="mt-2 max-w-[240px] text-sm leading-relaxed text-muted">
                 {stage.description}
               </p>
             </div>
