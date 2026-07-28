@@ -134,11 +134,11 @@ export default function Home() {
             <p className="accent-underline w-fit text-xs font-medium tracking-[0.25em] text-blue-soft/80 uppercase">
               Intelligent Customer Acquisition
             </p>
-            <h1 className="mt-6 text-balance text-2xl leading-[1.15] font-semibold tracking-tight text-white md:text-3xl lg:text-4xl">
+            <h1 className="mt-6 text-2xl leading-[1.15] font-semibold tracking-tight text-white md:text-balance md:text-3xl lg:text-4xl">
               We Build Digital Properties That Turn Consumer Intent Into
               Qualified Calls and Leads.
             </h1>
-            <p className="mt-5 text-balance text-sm leading-normal text-white/70 md:text-base">
+            <p className="mt-5 text-sm leading-normal text-white/70 md:text-balance md:text-base">
               MooFoo Ventures develops AI-assisted customer acquisition
               systems for high-intent consumer markets. We build the
               digital properties, tracking infrastructure, qualification
