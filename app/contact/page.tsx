@@ -18,7 +18,7 @@ export default function Contact() {
           <p className="accent-underline w-fit text-xs font-medium tracking-[0.25em] text-blue uppercase">
             Contact
           </p>
-          <h1 className="mt-8 max-w-2xl text-balance text-4xl leading-tight font-semibold tracking-tight text-ink md:text-5xl">
+          <h1 className="mt-8 max-w-2xl text-4xl leading-tight font-semibold tracking-tight text-ink md:text-balance md:text-5xl">
             Let&apos;s talk about a partnership.
           </h1>
         </Reveal>

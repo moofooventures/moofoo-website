@@ -60,10 +60,10 @@ export default function HowItWorks() {
             <p className="accent-underline w-fit text-xs font-medium tracking-[0.25em] text-blue uppercase">
               How It Works
             </p>
-            <h1 className="mt-8 max-w-3xl text-balance text-4xl leading-tight font-semibold tracking-tight text-ink md:text-6xl">
+            <h1 className="mt-8 max-w-3xl text-4xl leading-tight font-semibold tracking-tight text-ink md:text-balance md:text-6xl">
               A legitimate, consumer-initiated model.
             </h1>
-            <p className="mt-6 max-w-2xl text-balance text-lg leading-relaxed text-muted">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted md:text-balance">
               Every inquiry starts with a consumer who is already looking for
               help. Here is exactly how it moves from there.
             </p>

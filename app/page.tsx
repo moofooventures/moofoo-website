@@ -333,7 +333,7 @@ export default function Home() {
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
               Future Vision
             </p>
-            <h2 className="mt-4 text-balance text-2xl leading-snug font-semibold tracking-tight text-ink md:text-3xl">
+            <h2 className="mt-4 text-2xl leading-snug font-semibold tracking-tight text-ink md:text-balance md:text-3xl">
               We build intelligent technology companies that transform
               customer demand into measurable business growth.
             </h2>
@@ -396,14 +396,14 @@ export default function Home() {
               <p className="accent-underline w-fit text-xs font-medium tracking-[0.25em] text-blue uppercase">
                 Partnerships That Perform
               </p>
-              <h2 className="mt-6 text-balance text-4xl leading-tight font-bold tracking-tight md:text-5xl">
+              <h2 className="mt-6 text-4xl leading-tight font-bold tracking-tight md:text-balance md:text-5xl">
                 <span className="text-ink">Let&apos;s Build</span>
                 <br />
                 <span className="bg-gradient-to-r from-blue to-blue-soft bg-clip-text text-transparent">
                   Measurable Growth.
                 </span>
               </h2>
-              <p className="mt-6 max-w-xl text-balance text-base leading-relaxed text-muted md:text-lg">
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-muted md:text-balance md:text-lg">
                 We partner with reputable networks, advertisers, technology
                 providers, and operators to deliver qualified customers
                 through compliant, AI-assisted acquisition systems that

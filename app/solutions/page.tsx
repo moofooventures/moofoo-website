@@ -71,10 +71,10 @@ export default function Solutions() {
             <p className="accent-underline w-fit text-xs font-medium tracking-[0.25em] text-blue uppercase">
               Solutions
             </p>
-            <h1 className="mt-8 max-w-3xl text-balance text-4xl leading-tight font-semibold tracking-tight text-ink md:text-6xl">
+            <h1 className="mt-8 max-w-3xl text-4xl leading-tight font-semibold tracking-tight text-ink md:text-balance md:text-6xl">
               Full-stack inbound acquisition, built for accountability.
             </h1>
-            <p className="mt-6 max-w-2xl text-balance text-lg leading-relaxed text-muted">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted md:text-balance">
               From search traffic to call routing to reporting, every
               solution is designed around measurable performance.
             </p>

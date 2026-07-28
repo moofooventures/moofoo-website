@@ -43,10 +43,10 @@ export default function About() {
             <p className="accent-underline w-fit text-xs font-medium tracking-[0.25em] text-blue uppercase">
               About
             </p>
-            <h1 className="mt-8 max-w-3xl text-balance text-4xl leading-tight font-semibold tracking-tight text-ink md:text-6xl">
+            <h1 className="mt-8 max-w-3xl text-4xl leading-tight font-semibold tracking-tight text-ink md:text-balance md:text-6xl">
               A technology and performance marketing company.
             </h1>
-            <p className="mt-6 max-w-2xl text-balance text-lg leading-relaxed text-muted">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted md:text-balance">
               MooFoo Ventures LLC is a technology and performance marketing
               company building AI-assisted digital businesses and consumer
               acquisition systems.
