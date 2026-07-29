@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
-import { Search, PhoneCall, Route, ClipboardCheck, Banknote, X } from "lucide-react";
+import { PhoneOff, ListX, MessageSquareOff, UserX, MapPinOff, ShieldAlert } from "lucide-react";
 import Button from "@/components/Button";
 import Reveal from "@/components/Reveal";
+import ArchitectureDiagram from "@/components/ArchitectureDiagram";
+import PlatformCard, { type PlatformPillar } from "@/components/PlatformCard";
+import ConsumerJourney from "@/components/ConsumerJourney";
+import QualificationEngineDiagram from "@/components/QualificationEngineDiagram";
+import TechnologyStack from "@/components/TechnologyStack";
 
 export const metadata: Metadata = {
   title: "How It Works | MooFoo Ventures",
@@ -10,52 +15,47 @@ export const metadata: Metadata = {
   alternates: { canonical: "/how-it-works" },
 };
 
-const model = [
+const pillars: PlatformPillar[] = [
   {
-    icon: Search,
-    title: "Consumers independently search for help",
-    description:
-      "Visitors arrive at our digital properties on their own, while researching a service they already need.",
+    slug: "properties",
+    icon: "properties",
+    title: "Digital Properties",
+    description: "Purpose-built websites designed around consumer search intent.",
   },
   {
-    icon: PhoneCall,
-    title: "They voluntarily call or submit information",
-    description: "No outreach is initiated by us. Consumers choose to call or fill out a form.",
+    slug: "qualification",
+    icon: "qualification",
+    title: "Qualification Logic",
+    description: "Campaign rules evaluate every inquiry using predefined criteria.",
   },
   {
-    icon: Route,
-    title: "Tracking and routing connect them with participating providers",
-    description:
-      "Approved call-tracking and routing systems direct qualified inquiries to providers in our network.",
+    slug: "routing",
+    icon: "routing",
+    title: "Routing Infrastructure",
+    description: "Qualified opportunities move through intelligent routing systems.",
   },
   {
-    icon: ClipboardCheck,
-    title: "Campaign rules determine whether an inquiry qualifies",
-    description:
-      "Defined criteria — geography, service type, intent signals — determine what counts as a valid inquiry.",
-  },
-  {
-    icon: Banknote,
-    title: "MooFoo Ventures earns performance-based compensation where applicable",
-    description:
-      "Compensation is tied to qualified outcomes, not impressions or unqualified traffic.",
+    slug: "measurement",
+    icon: "measurement",
+    title: "Performance Measurement",
+    description: "Source attribution and reporting improve campaign quality over time.",
   },
 ];
 
 const wontDo = [
-  "No robocalling",
-  "No purchased cold-call lists",
-  "No unsolicited SMS campaigns",
-  "No impersonation of service providers",
-  "No fabricated local offices",
-  "No misleading claims",
+  { icon: PhoneOff, label: "No robocalling" },
+  { icon: ListX, label: "No purchased cold-call lists" },
+  { icon: MessageSquareOff, label: "No unsolicited SMS campaigns" },
+  { icon: UserX, label: "No impersonation of service providers" },
+  { icon: MapPinOff, label: "No fabricated local offices" },
+  { icon: ShieldAlert, label: "No misleading claims" },
 ];
 
 export default function HowItWorks() {
   return (
     <>
       <section className="border-b border-line bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-28 md:px-10 md:py-36">
+        <div className="mx-auto max-w-7xl px-6 py-4 md:px-10 md:py-6">
           <Reveal>
             <p className="accent-underline w-fit text-xs font-medium tracking-[0.25em] text-blue uppercase">
               How It Works
@@ -71,31 +71,96 @@ export default function HowItWorks() {
         </div>
       </section>
 
-      <section className="bg-gray-50 py-28 md:py-36">
-        <div className="mx-auto max-w-5xl px-6 md:px-10">
-          <div className="space-y-10">
-            {model.map((step, i) => (
-              <Reveal
-                key={step.title}
-                delay={i * 80}
-                className="flex gap-6 rounded-2xl border border-line bg-white p-8"
-              >
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blue-soft text-blue">
-                  <step.icon className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
-                </div>
-                <div>
-                  <h2 className="text-base font-semibold text-ink">{step.title}</h2>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">
-                    {step.description}
-                  </p>
-                </div>
+      <section className="border-b border-line bg-gray-50 py-4 md:py-6">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <Reveal className="max-w-2xl">
+            <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
+              Interactive Acquisition Workflow
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+              How demand becomes a qualified connection.
+            </h2>
+          </Reveal>
+
+          <Reveal className="mt-14">
+            <ArchitectureDiagram />
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="border-b border-line bg-white py-4 md:py-6">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <Reveal className="max-w-2xl">
+            <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
+              Behind the Platform
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+              The infrastructure behind every inquiry.
+            </h2>
+          </Reveal>
+
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {pillars.map((item, i) => (
+              <Reveal key={item.slug} delay={i * 80}>
+                <PlatformCard item={item} />
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="border-t border-line bg-white py-28 md:py-36">
+      <section className="border-b border-line bg-gray-50 py-4 md:py-6">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <Reveal className="max-w-2xl">
+            <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
+              Consumer Journey
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+              What the consumer actually experiences.
+            </h2>
+          </Reveal>
+
+          <Reveal delay={100} className="mt-16">
+            <ConsumerJourney />
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="border-b border-line bg-white py-4 md:py-6">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <Reveal className="max-w-2xl">
+            <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
+              Qualification Engine
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+              Every inquiry is evaluated before it ever routes.
+            </h2>
+          </Reveal>
+
+          <Reveal delay={100} className="mt-14 flex justify-center">
+            <QualificationEngineDiagram />
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="border-b border-line bg-gray-50 py-4 md:py-6">
+        <div className="mx-auto max-w-4xl px-6 md:px-10">
+          <Reveal className="max-w-2xl">
+            <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
+              Technology Layers
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+              A stack built for accountability.
+            </h2>
+          </Reveal>
+
+          <Reveal delay={100} className="mt-14">
+            <TechnologyStack />
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="border-b border-line bg-white py-4 md:py-6">
         <div className="mx-auto max-w-4xl px-6 md:px-10">
           <Reveal className="text-center">
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
@@ -106,22 +171,24 @@ export default function HowItWorks() {
             </h2>
           </Reveal>
 
-          <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2">
             {wontDo.map((item, i) => (
               <Reveal
-                key={item}
+                key={item.label}
                 delay={i * 60}
-                className="flex items-center gap-3 rounded-xl border border-line bg-gray-50 px-5 py-4"
+                className="group flex items-center gap-4 rounded-2xl border border-line bg-gray-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue/40 hover:bg-white hover:shadow-xl hover:shadow-ink/5"
               >
-                <X className="h-4 w-4 shrink-0 text-muted" strokeWidth={2} aria-hidden="true" />
-                <span className="text-sm font-medium text-ink">{item}</span>
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-muted transition-colors duration-300 group-hover:text-blue">
+                  <item.icon className="h-4 w-4" strokeWidth={1.75} aria-hidden="true" />
+                </div>
+                <span className="text-sm font-medium text-ink">{item.label}</span>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="border-t border-line bg-gray-50 py-28 md:py-36">
+      <section className="bg-gray-50 py-4 md:py-6">
         <div className="mx-auto flex max-w-4xl flex-col items-center px-6 text-center md:px-10">
           <Reveal>
             <h2 className="text-3xl font-semibold tracking-tight text-ink md:text-4xl">
