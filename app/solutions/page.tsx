@@ -179,7 +179,7 @@ export default function Solutions() {
       />
 
       <section className="border-b border-line bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-28 md:px-10 md:py-36">
+        <div className="mx-auto max-w-7xl px-6 py-4 md:px-10 md:py-6">
           <Reveal>
             <p className="accent-underline w-fit text-xs font-medium tracking-[0.25em] text-blue uppercase">
               Solutions
@@ -195,7 +195,7 @@ export default function Solutions() {
         </div>
       </section>
 
-      <div className="border-b border-line bg-gray-50 py-8">
+      <div className="border-b border-line bg-gray-50 py-4 md:py-6">
         <Reveal className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-4 px-6 md:px-10">
           {callouts.map((callout) => (
             <span key={callout.label} className="flex items-center gap-2 text-xs font-medium tracking-[0.05em] text-muted uppercase">
@@ -206,7 +206,7 @@ export default function Solutions() {
         </Reveal>
       </div>
 
-      <section className="border-b border-line bg-white py-28 md:py-36">
+      <section className="border-b border-line bg-white py-4 md:py-6">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <Reveal className="max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
@@ -223,7 +223,7 @@ export default function Solutions() {
         </div>
       </section>
 
-      <section className="bg-gray-50 py-28 md:py-36">
+      <section className="bg-gray-50 py-4 md:py-6">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <Reveal className="max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
@@ -263,7 +263,7 @@ export default function Solutions() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-white py-28 md:py-36">
+      <section className="border-t border-line bg-white py-4 md:py-6">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <Reveal className="max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
@@ -284,7 +284,7 @@ export default function Solutions() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-gray-50 py-28 md:py-36">
+      <section className="border-t border-line bg-gray-50 py-4 md:py-6">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <Reveal className="max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
@@ -301,7 +301,7 @@ export default function Solutions() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-white py-28 md:py-36">
+      <section className="border-t border-line bg-white py-4 md:py-6">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <Reveal className="max-w-2xl">
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
@@ -325,7 +325,7 @@ export default function Solutions() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-gray-50 py-28 md:py-36">
+      <section className="border-t border-line bg-gray-50 py-4 md:py-6">
         <div className="mx-auto max-w-3xl px-6 md:px-10">
           <Reveal className="text-center">
             <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
@@ -346,7 +346,7 @@ export default function Solutions() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-white py-28 md:py-36">
+      <section className="border-t border-line bg-white py-4 md:py-6">
         <div className="mx-auto flex max-w-4xl flex-col items-center px-6 text-center md:px-10">
           <Reveal>
             <h2 className="text-3xl font-semibold tracking-tight text-ink md:text-4xl">
