@@ -7,9 +7,21 @@ import {
   Waypoints,
   Sparkles,
   BarChart3,
+  PhoneIncoming,
+  Eye,
+  Gauge,
+  BrainCog,
+  Boxes,
+  Lock,
+  Cpu,
+  TrendingUp,
 } from "lucide-react";
 import Button from "@/components/Button";
 import Reveal from "@/components/Reveal";
+import ArchitectureDiagram from "@/components/ArchitectureDiagram";
+import DifferentiatorCard, { type Differentiator } from "@/components/DifferentiatorCard";
+import RoadmapCards from "@/components/RoadmapCards";
+import FaqItem from "@/components/FaqItem";
 
 export const metadata: Metadata = {
   title: "Solutions | MooFoo Ventures",
@@ -62,9 +74,110 @@ const items = [
   },
 ];
 
+const differentiators: Differentiator[] = [
+  {
+    slug: "intent",
+    icon: "intent",
+    title: "Consumer Intent First",
+    description:
+      "We focus on consumers actively seeking solutions instead of interruption marketing.",
+  },
+  {
+    slug: "measurement",
+    icon: "measurement",
+    title: "Transparent Measurement",
+    description:
+      "Every qualified opportunity is measurable from source through routing.",
+  },
+  {
+    slug: "optimization",
+    icon: "optimization",
+    title: "AI-Assisted Optimization",
+    description:
+      "Artificial intelligence supports analysis, workflows, and operational efficiency while strategic decisions remain human-directed.",
+  },
+  {
+    slug: "infrastructure",
+    icon: "infrastructure",
+    title: "Long-Term Infrastructure",
+    description: "We build scalable acquisition systems rather than one-off campaigns.",
+  },
+];
+
+const principles = [
+  { icon: Eye, title: "Designed Around Transparency" },
+  { icon: Gauge, title: "Built for Measurement" },
+  { icon: BrainCog, title: "Human Directed AI" },
+  { icon: Boxes, title: "Scalable Infrastructure" },
+  { icon: Lock, title: "Privacy Conscious" },
+  { icon: TrendingUp, title: "Performance Focused" },
+];
+
+const callouts = [
+  { icon: PhoneIncoming, label: "Consumer-Initiated" },
+  { icon: Sparkles, label: "AI-Assisted" },
+  { icon: Eye, label: "Transparent" },
+  { icon: Gauge, label: "Measured" },
+  { icon: Boxes, label: "Scalable" },
+  { icon: TrendingUp, label: "Performance Focused" },
+  { icon: Lock, label: "Privacy Conscious" },
+  { icon: Cpu, label: "Technology Driven" },
+];
+
+const faqs = [
+  {
+    question: "Are you a marketing agency?",
+    answer:
+      "No. MooFoo Ventures builds and operates its own digital properties and acquisition infrastructure — we're not an agency running campaigns on behalf of outside clients.",
+  },
+  {
+    question: "Do you generate outbound calls?",
+    answer:
+      "No. All consumer interactions are consumer-initiated. MooFoo Ventures does not use robocalling, purchased cold-call lists, or unsolicited outbound contact.",
+  },
+  {
+    question: "Do you sell consumer data?",
+    answer:
+      "No. Consumer information is used to route and fulfill a specific inquiry — it is not sold as a standalone data product.",
+  },
+  {
+    question: "Who do you partner with?",
+    answer:
+      "We work with affiliate networks, direct advertisers, technology providers, and strategic partners in approved, high-intent consumer categories.",
+  },
+  {
+    question: "How do you measure campaign performance?",
+    answer:
+      "Every inquiry is tracked from source through qualification and routing, with outcome data reviewed to improve future performance.",
+  },
+  {
+    question: "Can you work with affiliate networks?",
+    answer:
+      "Yes. We're actively building relationships with reputable affiliate networks that value transparent traffic sources and measurable call quality.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
 export default function Solutions() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       <section className="border-b border-line bg-white">
         <div className="mx-auto max-w-7xl px-6 py-28 md:px-10 md:py-36">
           <Reveal>
@@ -82,9 +195,46 @@ export default function Solutions() {
         </div>
       </section>
 
+      <div className="border-b border-line bg-gray-50 py-8">
+        <Reveal className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-4 px-6 md:px-10">
+          {callouts.map((callout) => (
+            <span key={callout.label} className="flex items-center gap-2 text-xs font-medium tracking-[0.05em] text-muted uppercase">
+              <callout.icon className="h-4 w-4 text-blue" strokeWidth={1.75} aria-hidden="true" />
+              {callout.label}
+            </span>
+          ))}
+        </Reveal>
+      </div>
+
+      <section className="border-b border-line bg-white py-28 md:py-36">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <Reveal className="max-w-2xl">
+            <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
+              Platform Architecture
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+              How demand becomes a qualified connection.
+            </h2>
+          </Reveal>
+
+          <Reveal className="mt-14">
+            <ArchitectureDiagram />
+          </Reveal>
+        </div>
+      </section>
+
       <section className="bg-gray-50 py-28 md:py-36">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <Reveal className="max-w-2xl">
+            <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
+              What We Build
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+              The building blocks of every campaign.
+            </h2>
+          </Reveal>
+
+          <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2">
             {items.map((item, i) => (
               <Reveal
                 key={item.title}
@@ -96,9 +246,9 @@ export default function Solutions() {
                   strokeWidth={1.5}
                   aria-hidden="true"
                 />
-                <h2 className="mt-5 text-lg font-semibold text-ink">
+                <h3 className="mt-5 text-lg font-semibold text-ink">
                   {item.title}
-                </h2>
+                </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">
                   {item.description}
                 </p>
@@ -110,6 +260,89 @@ export default function Solutions() {
             Campaign availability and traffic methods depend on advertiser
             and network approval.
           </Reveal>
+        </div>
+      </section>
+
+      <section className="border-t border-line bg-white py-28 md:py-36">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <Reveal className="max-w-2xl">
+            <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
+              Why MooFoo Is Different
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+              Built as infrastructure, not a campaign.
+            </h2>
+          </Reveal>
+
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {differentiators.map((item, i) => (
+              <Reveal key={item.slug} delay={i * 80}>
+                <DifferentiatorCard item={item} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-line bg-gray-50 py-28 md:py-36">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <Reveal className="max-w-2xl">
+            <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
+              Current Focus
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+              Where we are, and where we&apos;re headed.
+            </h2>
+          </Reveal>
+
+          <Reveal delay={100} className="mt-16">
+            <RoadmapCards />
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="border-t border-line bg-white py-28 md:py-36">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <Reveal className="max-w-2xl">
+            <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
+              Technology Principles
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+              The standard every system is held to.
+            </h2>
+          </Reveal>
+
+          <div className="mt-14 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            {principles.map((principle, i) => (
+              <Reveal key={principle.title} delay={i * 60} className="flex items-center gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blue-soft text-blue">
+                  <principle.icon className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
+                </div>
+                <h3 className="text-sm font-semibold text-ink">{principle.title}</h3>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-line bg-gray-50 py-28 md:py-36">
+        <div className="mx-auto max-w-3xl px-6 md:px-10">
+          <Reveal className="text-center">
+            <p className="text-xs font-medium tracking-[0.2em] text-blue uppercase">
+              Frequently Asked Questions
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+              Questions we get from partners.
+            </h2>
+          </Reveal>
+
+          <div className="mt-14 flex flex-col gap-4">
+            {faqs.map((faq, i) => (
+              <Reveal key={faq.question} delay={i * 60}>
+                <FaqItem question={faq.question} answer={faq.answer} />
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
